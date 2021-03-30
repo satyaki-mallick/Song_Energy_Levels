@@ -41,6 +41,8 @@ from tensorflow.keras import optimizers
 #from src.explore import get_data
 
 SONG_LENGTH = 430
+base_dir = '/Users/satyakimallick/IdeaProjects/Awaves_Energy_Levels/dataset/University of Jyvaskyla emotion dataset/set1/'
+songs_path = f'{base_dir}mp3/Soundtrack360_mp3/'
 
 def SBCNN_Model(field_size, bands, frames, num_channels, num_labels):
     model = Sequential()
@@ -79,7 +81,7 @@ fig.colorbar(img, ax=ax, format='%+2.0f dB')
 ax.set(title='Mel-frequency spectrogram')
 
 # base_dir = '/content/drive/MyDrive/Awaves Data/set1/'
-base_dir = '/Users/satyakimallick/IdeaProjects/Awaves_Energy_Levels/dataset/University of Jyvaskyla emotion dataset/set1/'
+
 
 # def audio_to_spectogram(audio_file, X):
 #     y, sr = librosa.load(audio_file)
@@ -98,6 +100,13 @@ def audio_to_spectogram(audio_file):
 
     power_to_db = librosa.power_to_db(S1, ref = np.max)
     return power_to_db[:, :430]
+
+def audio_to_mfcc(file_name):
+    audio, sample_rate = librosa.load(file_name, res_type='kaiser_fast')
+    audio = audio[:220500]
+    mfccs = librosa.feature.mfcc(y=audio, sr=sample_rate)
+
+    return mfccs
 
 
 def divide_song_by_4(y, sr, X):
@@ -149,10 +158,14 @@ except (OSError, IOError) as e:
     dir = listdir(songs_path)
     dir.sort()
     audio_files = [f for f in dir[:60] if isfile(join(songs_path, f))]
-    print(audio_files)
-    X = [audio_to_spectogram(songs_path + file) for file in audio_files] # This takes a shit load of time
+    X = [audio_to_mfcc(songs_path + file) for file in audio_files] # This takes a shit load of time
+    X = []
+    for file in audio_files:
+        mfcc = audio_to_mfcc(songs_path + file)
+        print(mfcc.shape)
+        X.append(mfcc)
 
-    pickle.dump(X, open("X.pickle", "wb"))
+    #pickle.dump(X, open("X.pickle", "wb"))
     X = np.asarray(X)
 
 
@@ -227,3 +240,10 @@ def get_data():
 #my_model.fit(generate_data(X.shape[0]), epochs=3)
 
 my_model.fit(x=X,y= y, epochs=20)
+
+
+def main():
+    print("Hello World!")
+
+if __name__ == "__main__":
+    main()
