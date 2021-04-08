@@ -17,3 +17,6 @@ So far I have a CNN model which is applied on the mel spectrograms of 360 songs 
 * Trying out LSTMs
 * Trying out Emotion AI models
 
+
+## Current Work
+Instead of having binary labels between a sad and a happy song, what if the songs ouput a number which if greater than a threshold, is a happy song, and otherwise is a sad song.
