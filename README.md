@@ -30,3 +30,5 @@ So far I have a CNN model which is applied on the mel spectrograms of 360 songs 
 
 ## Current Work
 Instead of having binary labels between a sad and a happy song, what if the songs ouput a number which if greater than a threshold, is a happy song, and otherwise is a sad song.
+
+Google Colab notebook - https://colab.research.google.com/drive/1vUPBy2Gp_kdt6LAP0fVooGqEGRlFMwBT?usp=sharing
