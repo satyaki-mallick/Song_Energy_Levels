@@ -1,5 +1,20 @@
 # Song_Energy_Levels
 
+
+
+## Update - 15th April, 2020
+The current model has improved and gives 95% accuracy on Javyskyla dataset right now. The model is trained to give a integer number between 1 and 6 in a window of 10 seconds of a song with 1 represents low energy and 6 represents highest energy. Tested on:
+
+Chopin - Nocturne op.9 No.2 (Timestamp 0:00 to 0:10 secs) - Model gives a score of 1
+
+Don't You Worry Child (Time stamp 3:35 to 3:45) - Model gives a score of 5.
+
+
+## Update - 10th April, 2020
+Instead of having binary labels between a sad and a happy song, what if the songs ouput a number which if greater than a threshold, is a happy song, and otherwise is a sad song.
+
+
+
 ## Abstract
 When looking at the general music build-up of a party, people usually refer to concepts like ‘flow’ and ‘energy’. Usually, professional DJ’s use the concept of energy to slowly activate their crowd and to reach a climax when the energy of the music and crowd are high. However, in scientific literature the concept of energy is ill defined. On the contrary, in practice, multiple music software tools use it to provide a score on energy level for their users. Multiple outlets describe how DJs should alter their playlists to accommodate energy levels (e.g. MixedInKey)
 Therefore this assignment focusses upon defining and extracting the energy level for use within the virtual DJ environment. The main result should be an energy level score which could be implemented within the DJ recommender and to use it as a variable to mix songs upon. However, to get to such a score, we first need to define what energy is in music terms.
@@ -28,7 +43,6 @@ So far I have a CNN model which is applied on the mel spectrograms of 360 songs 
 * Trying out Emotion AI models
 
 
-## Current Work
-Instead of having binary labels between a sad and a happy song, what if the songs ouput a number which if greater than a threshold, is a happy song, and otherwise is a sad song.
+
 
 Google Colab notebook - https://colab.research.google.com/drive/1vUPBy2Gp_kdt6LAP0fVooGqEGRlFMwBT?usp=sharing
