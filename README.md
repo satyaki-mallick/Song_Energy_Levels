@@ -25,6 +25,12 @@ As definitions are unavailable in scientific literature, we look for practical e
 The energy level per song is available in the Spotify API. Mixingguide states that energy is not defined by only the amplitude or BPM of a track. So it is highly likeable that energy or energy level is a compounded variable containing multiple independent variables.
 
 
+## Dataset
+I use the University of Jyvaskyla dataset which is a carefully chosen set of 360 songs of approx. 15 secs each. These are not so popular music thus eliminating bias popularity bias. A full description of this dataset can be found: 
+* Here, [Tuomas et al.](https://journals.sagepub.com/doi/abs/10.1177/0305735610362821)
+* and here, [ISMIR -> University of Jyvaskyla](https://www.jyu.fi/hytk/fi/laitokset/mutku/en/research/projects2/past-projects/coe/materials/emotion/soundtracks/Index)
+
+
 ## Progress
 So far I have a CNN model which is applied on the mel spectrograms of 360 songs from the Jyvaskyla dataset. The model performs poorly (53%) accuracy at the moment and requires improvement.
 
