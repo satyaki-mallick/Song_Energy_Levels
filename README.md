@@ -2,7 +2,7 @@
 
 
 
-## Update - 15th April, 2020
+## Update - 15th April, 2021
 The current model has improved and gives 95% accuracy on Javyskyla dataset right now. The model is trained to give a integer number between 1 and 6 in a window of 10 seconds of a song with 1 represents low energy and 6 represents highest energy. Tested on:
 
 Chopin - Nocturne op.9 No.2 (Timestamp 0:00 to 0:10 secs) - Model gives a score of 1
@@ -10,9 +10,11 @@ Chopin - Nocturne op.9 No.2 (Timestamp 0:00 to 0:10 secs) - Model gives a score 
 Don't You Worry Child (Time stamp 3:35 to 3:45) - Model gives a score of 5.
 
 
-## Update - 10th April, 2020
+## Update - 10th April, 2021
 Instead of having binary labels between a sad and a happy song, what if the songs ouput a number which if greater than a threshold, is a happy song, and otherwise is a sad song.
 
+## Update - 30th March, 2021
+So far a CNN model which is applied on the mel spectrograms of 360 songs from the Jyvaskyla dataset. The model performs poorly (53%) accuracy at the moment and requires improvement.
 
 
 ## Abstract
@@ -31,22 +33,18 @@ I use the University of Jyvaskyla dataset which is a carefully chosen set of 360
 * and here, [ISMIR -> University of Jyvaskyla](https://www.jyu.fi/hytk/fi/laitokset/mutku/en/research/projects2/past-projects/coe/materials/emotion/soundtracks/Index)
 
 
-## Progress
-So far I have a CNN model which is applied on the mel spectrograms of 360 songs from the Jyvaskyla dataset. The model performs poorly (53%) accuracy at the moment and requires improvement.
-
-## Things tried so far
-* I have tried using 1D CNN and 2D CNN on the mel-spectrogram (1D CNN by reducing one of the dimensions of the spectrogram) with no significant result.
-* Trying out only dense layer based models
-* Trying out only binary classification to classify happy songs against sad songs.
-* Trying out MFCC based model
+## Things attempted so far
+* Using 1D CNN and 2D CNN on the mel-spectrogram (1D CNN by reducing one of the dimensions of the spectrogram) with no significant result.
+* Only dense layer based models
+* Only binary classification to classify happy songs against sad songs.
 
 
 ## Outlook
 * Using Temporal CNN
-* Trying other different other kind of spectrograms to see if they give significant results
-* Trying out datasets other that the Jyvaskyla dataset
-* Trying out LSTMs
-* Trying out Emotion AI models
+* Other kind of spectrograms to see if they give significant results
+* Using out datasets other that the Jyvaskyla dataset
+* Using out LSTMs
+* Using out Emotion AI models
 
 
 
